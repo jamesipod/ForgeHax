@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ -n "${FORGEHAX_DEBUG}" ]]; then
+if [[ -n "${BETTERFPS_DEBUG}" ]]; then
     set -x
 fi
 
@@ -27,6 +27,6 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         GIT_COMMIT="${GIT_COMMIT}" docker-compose \
             -f docker-compose.ci.yml \
             run --rm \
-            forgehax build --stacktrace
+            betterfps build --stacktrace
     fi
 fi
