@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ -n "${FORGEHAX_DEBUG}" ]]; then
+if [[ -n "${BETTERFPS_DEBUG}" ]]; then
     set -x
 fi
 
@@ -21,11 +21,11 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         docker-compose \
             -f docker-compose.ci.yml \
             run --rm \
-            forgehax clean --stacktrace
+            betterfps clean --stacktrace
 
         docker-compose \
             -f docker-compose.ci.yml \
             run --rm \
-            forgehax setupDecompWorkspace --stacktrace
+            betterfps setupDecompWorkspace --stacktrace
     fi
 fi
