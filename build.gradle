@@ -24,21 +24,21 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 sourceCompatibility = targetCompatibility = '1.8'
 
-group 'com.matt.forgehax'
-version project.property('forgehax.version')
+group 'com.matt.betterfps'
+version project.property('betterfps.version')
 
-archivesBaseName = "forgehax-" + project.property('forgehax.mc.version')
+archivesBaseName = "betterfps-" + project.property('betterfps.mc.version')
 
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
 minecraft {
-    version = project.property('forgehax.forge.version')
+    version = project.property('betterfps.forge.version')
     runDir = "run"
 
     // channel_mapping
-    mappings = project.property('forgehax.mcp.channel') + '_' + project.property('forgehax.mcp.mapping')
+    mappings = project.property('betterfps.mcp.channel') + '_' + project.property('betterfps.mcp.mapping')
 }
 
 dependencies {
@@ -50,11 +50,11 @@ dependencies {
 jar {
     manifest {
         attributes (
-                'FMLCorePlugin': 'com.matt.forgehax.asm.ForgeHaxCoreMod',
+                'FMLCorePlugin': 'com.matt.betterfps.asm.BetterFpsCoreMod',
                 'FMLCorePluginContainsFMLMod': 'true'
         )
     }
-    exclude ('assets/minecraft/textures/forgehax/*')
+    exclude ('assets/minecraft/textures/betterfps/*')
 }
 
 processResources
@@ -80,12 +80,12 @@ processResources
     // TODO: Filter images out properly
     //filesNotMatching("**/*.png") {
         it.filter ReplaceTokens, tokens: [
-                "forgehax.version"      : project.property("forgehax.version"),
-                "forgehax.mc.version"   : project.property("forgehax.mc.version"),
-                "forgehax.forge.version": project.property("forgehax.forge.version"),
-                "forgehax.mcp.version"  : project.property("forgehax.mcp.version"),
-                "forgehax.mcp.channel"  : project.property("forgehax.mcp.channel"),
-                "forgehax.mcp.mapping"  : project.property("forgehax.mcp.mapping")
+                "betterfps.version"      : project.property("forgehax.version"),
+                "betterfps.mc.version"   : project.property("forgehax.mc.version"),
+                "betterfps.forge.version": project.property("forgehax.forge.version"),
+                "betterfps.mcp.version"  : project.property("forgehax.mcp.version"),
+                "betterfps.mcp.channel"  : project.property("forgehax.mcp.channel"),
+                "betterfps.mcp.mapping"  : project.property("forgehax.mcp.mapping")
         ]
     //}
 }
